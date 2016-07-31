@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Aspose.word</title>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		 alert("Hello world");
+
+		$("#mainForm:getButton").click(function() {
+			
+			 alert("aaa");
+			var myVal = $("#mainForm:getText").val();
+			
+			// var urlToCall = "/api/words/"+myVal+"/protection";
+			var urlToCall = "http://localhost:8080/aspose-services/api/words/"+myVal+"/protection";
+			alert(urlToCall);
+			$.get(urlToCall, function(data, status) {
+				alert("Data: " + data + "\nStatus: " + status);
+			});
+		});
+
+	});
+</script>
+
+
+</h:head>
+<h:body>
+	<h2>Aspose WebService Call Page</h2>
+	<h:form id="mainForm">
+		<lable>Word for Get </lable>
+		<h:inputText id="getText" value="#{WebServiceController.contextForGet}"></h:inputText>
+		<h:commandButton id="getButton" value="Get"
+			action="#{WebServiceController.callGetAction}"></h:commandButton>
+		<br />
+		<br />
+
+		<lable>Head for Post </lable>
+		<h:inputText label="Head for Post" id="headpost"
+			value="#{WebServiceController.contextForPost}"></h:inputText>
+		<lable>Body for Post </lable>
+		<h:inputTextarea label="Body for Post" id="bodypost"
+			value="#{WebServiceController.contextBodyForPost}" cols="15" rows="2"></h:inputTextarea>
+		<h:commandButton id="postbutton" value="Post"
+			action="#{WebServiceController.callPostAction}"></h:commandButton>
+		<br />
+		<br />
+		<lable>Conversion Using Put </lable>
+		<h:commandButton id="put" value="Put"
+			action="#{WebServiceController.callPutAction}"></h:commandButton>
+	</h:form>
+</h:body>
+</html>
