@@ -108,7 +108,7 @@
 				<version>2.6</version>
 				<configuration>
 					<outputDirectory>E:/AsposeTest/</outputDirectory>
-					<webappDirectory>E:/AsposeTest/aspose-services/</webappDirectory>
+					<webappDirectory>E:/AsposeTest/aspose-services-build/</webappDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
