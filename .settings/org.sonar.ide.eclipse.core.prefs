@@ -2,5 +2,5 @@ analyseLocally=false
 eclipse.preferences.version=1
 extraProperties=
 projectKey=ASPOSE-assignment\:aspose-services
-serverUrl=
+serverUrl=http\://localhost\:9000
 version=2
